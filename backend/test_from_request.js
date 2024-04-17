@@ -65,3 +65,8 @@ axios.get(`https://api.the-odds-api.com/v4/sports/${sportKey}/odds`, {
         console.log('Error status', error.response.status);
         console.log(error.response.data);
     });
+
+cron.schedule('0 0 * * *', () => {
+    console.log('Fetching data...');
+    fetchData();
+});
